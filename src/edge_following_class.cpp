@@ -134,8 +134,8 @@ class EdgeFollower{
 			if (fsm == 0){
 				vel.linear.x = std::max(std::min( (((dMax-dMin)/dMax)*SPEED*(dFront-dMin)), SPEED ),0.0);
 				// vel.angular.z = 3*(DISTANCE-c_range) - 2 * theta;
-				// vel.angular.z = ((3*(DISTANCE-c_range) - 3 * theta) + vel.angular.z)/2.0;
-				vel.angular.z = 3*(DISTANCE-c_range) - 3 * theta;
+				vel.angular.z = ((3*(DISTANCE-c_range) - 3 * theta) + vel.angular.z)/2.0;
+				// vel.angular.z = 3*(DISTANCE-c_range) - 3 * theta;
 
 
 
