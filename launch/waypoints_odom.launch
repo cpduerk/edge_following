@@ -1,0 +1,15 @@
+<launch>
+	<node 
+		pkg="stage_ros"
+		type="stageros"
+		name="stageros"
+		args="$(find create_world)/circle.world"
+	>
+	</node>
+	<node
+		pkg="create_world"
+		type="multiple_waypoints_odom"
+		name="multiple_waypoints_odom"
+		output="screen"
+	/>
+</launch>

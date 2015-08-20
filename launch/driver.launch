@@ -1,0 +1,19 @@
+<launch>
+	<node 
+		pkg="stage_ros"
+		type="stageros"
+		name="stageros"
+		args="$(find create_world)/circle.world"
+	>
+	<!--	<remap
+			from="cmd_vel"
+			to="turtle1/cmd_vel"
+		/> -->
+	</node>
+<!--	<node
+		pkg="turtlesim"
+		type="turtle_teleop_key"
+		name="stage_teleop"
+		launch-prefix="xterm -e"
+	/> -->
+</launch>

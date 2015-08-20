@@ -1,0 +1,51 @@
+<launch>
+	<node 
+		pkg="stage_ros"
+		type="stageros"
+		name="stageros"
+		args="$(find create_world)/yard.world"
+	>
+	</node>
+	<!-- <node
+		pkg="create_world"
+		type="go_to_waypoint"
+		name="go_to_waypoint"
+		output="screen"
+	/> -->
+	<node
+		pkg="create_world"
+		type="waypoints_tf"
+		name="waypoints_tf"
+		output="screen"
+	/>
+	<!-- <node
+		pkg="create_world"
+		type="multiple_waypoints_odom"
+		name="multiple_waypoints_odom"
+		output="screen"
+	/> -->
+	<node
+		pkg="tf"
+		type="static_transform_publisher"
+		name="wp0"
+		args="0 10 0 0 0 0 odom wp0 100"
+	/>
+	<node
+		pkg="tf"
+		type="static_transform_publisher"
+		name="wp1"
+		args="2 10 0 0 0 0 odom wp1 100"
+	/>
+	<node
+		pkg="tf"
+		type="static_transform_publisher"
+		name="wp2"
+		args="2 0 0 0 0 0 odom wp2 100"
+	/>
+	<node
+		pkg="tf"
+		type="static_transform_publisher"
+		name="wp3"
+		args="0 0 0 0 0 0 odom wp3 100"
+	/>
+</launch>
